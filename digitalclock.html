@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: rgb(216, 179, 133);
+        }
+
+        main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main .clock{
+            display: flex;
+            align-items: center;
+            justify-content:space-evenly;
+            background: rgb(179, 115, 72);
+            width: 1400px;
+            height: 400px;
+            margin: 100px;
+            margin-top: 280px;
+            border-radius: 16px;
+        }
+
+        main .time{
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            background-color: rgb(6, 9, 22);
+            width: 300px;
+            height: 300px;
+            border-radius: 16px;
+            color: rgb(5, 131, 10);
+            font-size: 11em;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="clock">
+            <div class="time" id="f1"></div>
+            <div class="time" id="f2"></div>
+            <div class="time" id="f3"></div>
+            <div class="time" id="f4"></div>
+        </div>
+    </main>
+
+    <script>
+
+        function gettime() {
+
+            let date = new Date();
+            let hours = date.getHours()
+            let minutes = date.getMinutes()
+            let seconds = date.getSeconds()
+            
+            let day;
+            day = hours < 12 ? "AM" : "PM";
+            hours = hours > 12 ? (hours - 12) : hours;
+            hours = hours == 0 ? (hours = 0) : hours ;
+
+            hours = hours < 10 ? `0${hours}` : hours;
+            minutes = minutes < 10 ? `0${minutes}` : minutes;
+            seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+            document.getElementById('f1').innerHTML= hours
+            document.getElementById('f2').innerHTML= minutes
+            document.getElementById('f3').innerHTML= seconds
+            document.getElementById('f4').innerHTML= day
+        }
+        gettime();
+        setInterval(gettime, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body{
+            background-color: rgb(203, 252, 252);
+        }
+
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .cal{
+            width: 520px;
+            height: 825px;
+            margin: 40px;
+            border-radius: 16px;
+            background-color: rgb(48, 69, 69);
+            border: 1px solid rgb(16, 16, 16);
+            box-shadow:  -5px -5px 20px rgb(16, 16, 16),5px 5px 20px rgb(16, 16, 16);
+        }
+
+        .ele{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .display{
+            margin: 40px;
+            padding: 10px;
+            display: flex;
+            width: 88%;
+            height: 110px;
+            border-radius: 10px;
+            outline: none;
+            box-shadow: none;
+            font-size: 4.2em;
+            text-align: right;
+            overflow: hidden;
+            background:transparent;
+            color: #fff;
+        }
+
+        .in{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .row{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .butt{
+            width: 100px;
+            height: 100PX;
+            margin: 10px;
+            border-radius: 50%;
+            color: aliceblue;
+            background-color: transparent;
+            box-shadow:  -10px -10px 20px  rgb(79, 104, 104),15px 15px 20px 5px #171717;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 2em;
+        }
+
+        .butt:hover{
+            background-color: rgb(64, 88, 88)
+        }
+
+        .butt:active{
+            background-color: rgb(74, 95, 95);
+            box-shadow:  -1px -1px 5px  rgb(96, 126, 126),1px 1px 10px rgb(92, 123, 123);
+        }
+    </style>
+    <title>Document</title>
+    <script>
+        const display = document.getElementsByClassName("display");
+        function calculate(){
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = "error";
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <div class="cal">
+            <form class="ele">
+                <input type="text" class="display" name="display" readonly>
+                <div class="in">
+                    <div class="row">
+                        <input type="button" class="butt" value="AC" onclick="display.value = '' ">
+                        <input type="button" class="butt" value="DE" onclick="display.value = display.value.toString().slice(0,-1)">
+                        <input type="button" class="butt" value="%" onclick="display.value += '%' ">
+                        <input type="button" class="butt" value="/" onclick="display.value += '/' ">
+                    </div>
+                    <div class="row">
+                        <input type="button" class="butt" onclick="display.value += '7' " value="7">
+                        <input type="button" class="butt" onclick="display.value += '8' " value="8">
+                        <input type="button" class="butt" onclick="display.value += '9' " value="9">
+                        <input type="button" class="butt" value="*" onclick="display.value += '*' ">
+                    </div>
+                    <div class="row">
+                        <input type="button" class="butt" onclick="display.value += '4' " value="4">
+                        <input type="button" class="butt" onclick="display.value += '5' " value="5">
+                        <input type="button" class="butt" onclick="display.value += '6' " value="6">
+                        <input type="button" class="butt" onclick="display.value += '+' " value="+" >
+                    </div>
+                    <div class="row">
+                        <input type="button" class="butt" onclick="display.value += '1' " value="1">
+                        <input type="button" class="butt" onclick="display.value += '2' " value="2">
+                        <input type="button" class="butt" onclick="display.value += '3' " value="3">
+                        <input type="button" class="butt" value="-" onclick="display.value += '-' ">
+                    </div>
+                    <div class="row">
+                        <input type="button" class="butt" onclick="display.value += '00' " value="00">
+                        <input type="button" class="butt" onclick="display.value += '0' " value="0">
+                        <input type="button" class="butt" value="." onclick="display.value += '.' ">
+                        <input type="button" class="butt" value="=" onclick="try {display.value = eval(display.value);} catch (error){display.value = 'Error';}">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
