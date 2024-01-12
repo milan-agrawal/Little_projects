@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const ominousPositivityPhrases = [
+        "Embrace the shadows; they dance with the light.",
+        "In the depths of uncertainty, find the thrill of possibility.",
+        "The storm whispers secrets only to the brave.",
+        "In solitude, discover the strength of your own echoes.",
+        "Beneath the surface, chaos births creation.",
+        "Embrace the unknown; it's where miracles hide.",
+        "Amidst the silence, listen to the symphony of your soul.",
+        "In the void, forge your own constellations.",
+        "Broken stars still light up the darkest nights.",
+        "A labyrinth holds the promise of hidden treasures.",
+        "Even shadows can lead you to the dawn.",
+        "In the echoes of failure, resilience finds its voice.",
+        "Rise from the ashes with the grace of a phoenix.",
+        "Behind closed doors, dreams paint their own murals.",
+        "Lost roads may lead to unexpected destinations.",
+        "In solitude, find the companion of self-discovery.",
+        "Dance with the demons; they may reveal angels in disguise.",
+        "Embrace the scars; they narrate tales of survival.",
+        "In the heart of chaos, discover your own sanctuary.",
+        "The puppeteer of fate sometimes grants us scissors.",
+        "Within the shadows, uncover the palette of your resilience.",
+        "Whispers of doubt can be the prelude to unwavering faith.",
+        "Chasing shadows may unveil the contours of your destiny.",
+        "In the labyrinth of fear, uncover the courage to tread.",
+        "Breathe in the uncertainty; exhale possibility.",
+        "Behind closed eyes, envision the tapestry of your dreams.",
+        "Within the maze, discover the beauty of getting lost.",
+        "In the fog, wander; clarity often emerges from the mist.",
+        "Storms cleanse the spirit, leaving behind a vivid sky.",
+        "Through cracked mirrors, see the beauty of imperfection.",
+        "In the cocoon of doubt, metamorphose into possibility.",
+        "Beneath the veil of tears, unveil the strength to smile.",
+        "Shattered glass reflects the mosaic of your strength.",
+        "Whispers of despair may carry the seeds of renewal.",
+        "Even in the shadows, find the spark of your own light.",
+        "Beneath the surface, courage sleeps in the arms of fear.",
+        "Wander in the fog; clarity often emerges from the mist.",
+        "Storms cleanse the spirit, leaving behind a vivid sky.",
+        "Through cracked mirrors, see the beauty of imperfection.",
+        "In the cocoon of doubt, metamorphose into possibility.",
+        "Beneath the veil of tears, unveil the strength to smile.",
+        "Shattered glass reflects the mosaic of your strength.",
+        "Whispers of despair may carry the seeds of renewal.",
+        "Even in the shadows, find the spark of your own light.",
+        "Beneath the surface, courage sleeps in the arms of fear.",
+        "In the symphony of chaos, compose your own masterpiece.",
+        "Wander in the fog; clarity often emerges from the mist.",
+        "Storms cleanse the spirit, leaving behind a vivid sky.",
+        "Through cracked mirrors, see the beauty of imperfection.",
+        "In the cocoon of doubt, metamorphose into possibility.",
+        "Beneath the veil of tears, unveil the strength to smile.",
+        "Shattered glass reflects the mosaic of your strength.",
+        "Whispers of despair may carry the seeds of renewal.",
+        "Even in the shadows, find the spark of your own light.",
+        "Beneath the surface, courage sleeps in the arms of fear.",
+        "Within the labyrinth, discover the map of your fortitude.",
+        "Lost keys may open doors to unforeseen opportunities.",
+        "Embrace the storm; it may cleanse the spirit within.",
+        "Within the shadows, find the canvas of your own masterpiece.",
+        "Broken pieces may construct a mosaic of resilience.",
+        "In the symphony of chaos, compose your own opus.",
+        "Dance with uncertainty; it may lead to hidden treasures.",
+        "Within the labyrinth, find the compass of your courage.",
+        "In the shadows, discover the contours of your strength.",
+        "Behind the curtain of despair, unveil the stage of hope.",
+        "Shattered illusions may pave the way for new perspectives.",
+        "In the silence, hear the whispers of your own resilience.",
+        "Beneath the surface, the iceberg of courage awaits.",
+        "In the labyrinth of doubt, find the map of your convictions.",
+        "Lost roads may lead to undiscovered realms of opportunity.",
+        "Embrace the storm; it may clear the path ahead.",
+        "Within the shadows, find the canvas of your own masterpiece.",
+        "Broken pieces may construct the mosaic of your strength.",
+        "In the symphony of chaos, compose your own opus.",
+        "Dance with the shadows; they might lead you to the light.",
+        "Behind the curtain of fear, unveil the magic of courage.",
+        "Shattered dreams may fertilize the soil of new aspirations.",
+        "Within the wreckage, find the materials to build anew.",
+        "Lost keys may unlock doors to unforeseen opportunities.",
+        "Beneath the surface, discover the strength of your roots.",
+        "In the labyrinth of fear, find the courage to wander.",
+        "Broken wings may lead to the flight of resilience.",
+        "Amidst the ruins, construct the foundation of triumph.",
+        "In the symphony of chaos, compose your own sonnet.",
+        "Dance with uncertainty; it may lead to hidden treasures.",
+        "Within the labyrinth, find the compass of your courage.",
+        "In the shadows, discover the contours of your strength.",
+        "Behind the curtain of despair, unveil the magic of courage.",
+        "Shattered illusions may pave the way for new perspectives.",
+        "In the silence, hear the whispers of your own resilience.",
+        "Beneath the surface, the iceberg of courage awaits.",
+        "In the labyrinth of doubt, find the map of your convictions.",
+        "Lost roads may lead to undiscovered realms of opportunity.",
+        "Embrace the storm; it may clear the path ahead.",
+        "Within the shadows, find the canvas of your own masterpiece.",
+        "Broken pieces may construct the mosaic of your strength.",
+        "In the symphony of chaos, compose your own opus.",
+        "Dance with the shadows; they might guide you to the light.",
+        "Behind the curtain of fear, unveil the magic of courage.",
+        "Shattered dreams may fertilize the soil of new aspirations.",
+        "Within the wreckage, find the materials to build anew.",
+        "Lost keys may unlock doors to unforeseen opportunities.",
+        "Beneath the surface, discover the strength of your roots.",
+        "In the labyrinth of fear, find the courage to wander.",
+        "Broken wings may lead to the flight of resilience."
+        ];
+
+        function gen() {
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * max);
+            }
+
+            let rannum = getRandomInt(101)
+
+            display1 =  ominousPositivityPhrases[rannum];
+            display.value = display1;
+        }
+
+
+
+    </script>
+
+    <style>
+
+        *{
+            margin: 0%;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: rgb(119, 31, 31);
+        }
+
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px;
+        }
+
+        .platform{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .platform h1{
+            text-decoration: underline;
+            color: rgb(250, 194, 194);
+            filter: drop-shadow(0px 0px 35px rgb(13, 0, 0));
+            font-size: 5em;
+        }
+
+        .inp{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 16px;
+            box-shadow: 1px 1px 30px rgb(17, 10, 10);
+            background-color:rgb(58, 20, 20);
+            width: 600px;
+            margin: 50px;
+            padding: 20px;
+        }
+
+
+        #display{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin: 10px;
+            width: 500px;
+            height: 230px;
+            /* height: auto; */
+            background-color: transparent;
+            border: none;
+            outline: none;
+            border-radius: 20PX;
+            text-align: center;
+            font-size: 3.4em;
+            word-wrap: break-word;
+            overflow: hidden;
+            color:rgb(252, 172, 172) ;
+            filter: drop-shadow(0px 0px 20px  rgb(252, 26, 26))
+        }
+
+
+        input#generate{
+            width: 430px;
+            height: 35px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 16px;
+            background:rgb(252, 172, 172);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="platform">
+            <h1>Ominous Positivity</h1>
+            <div class="inp">
+                <textarea name="display"  id="display" readonly></textarea><br>
+                <input type="button" value="generate" id="generate" onclick="gen()">
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>
