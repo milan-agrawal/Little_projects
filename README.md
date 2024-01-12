@@ -1,3 +1,3 @@
-# Thoughtproject
+#little projects
 
-<p> its a random generater of ominous thoughts. In total there are 100 ominous thoughts in the form of an array</p>
+<p> this repository includes all my learning days small projects</p>
