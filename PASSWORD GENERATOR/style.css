@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(238, 238, 238);
+    background: url(./img/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-attachment: fixed; */
+}
+
+main .landing {
+    backdrop-filter: blur(15px);
+    height: 320px;
+    border: 1px solid aqua;
+    border-radius: 15px;
+    width: 720px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: red ; */
+}
+
+.leftland {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: yellowgreen; */
+    height: 100%;
+    /* align-items: center; */
+    width: 45%;
+}
+
+.gfont1 {
+    font-family: "Agbalumo", system-ui;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.gfont2 {
+    font-family: "Caprasimo", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.displaypart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 15px 0px 0px 0px;
+    /* background-color: black; */
+    box-shadow: inset 3px 3px 3px #488f84, inset -3px -3px 3px rgb(255, 4, 4);
+    padding: 3px 15px;
+    border-radius: 16px;
+}
+
+#passdisplay {
+    width: 90%;
+    height: 40px;
+    outline: none;
+    border: none;
+    position: relative;
+    font-size: 1.2em;
+    font-family: "Young Serif", sans-serif;
+    font-optical-sizing: auto;
+    color: rgb(192, 83, 83);
+    background: none;
+}
+
+#clipboard {
+    width: 9%;
+    cursor: pointer;
+    transition: 0.15s all linear;
+
+}
+
+#clipboard:hover {
+    filter: drop-shadow(0px 0px 4px rgba(255, 0, 0));
+}
+
+#clipboard:active {
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+
+#passgenbutt {
+    width: 60%;
+    padding: 10px;
+    /* position: relative; */
+    font-size: 1em;
+    font-family: "Caprasimo", serif;
+    color: rgba(251, 8, 8, 0.979);
+    font-weight: 400;
+    border: none;
+    border-radius: 16px;
+    background-color: aquamarine;
+    cursor: pointer;
+    box-shadow: inset 5px 5px 5px #00ffdd, inset -5px -5px 5px rgb(249, 118, 118);
+    border: 1px solid white;
+    transition: 0.22s all linear;
+}
+
+#passgenbutt:hover {
+    box-shadow: inset -2px -2px 3px #478077, inset 2px 2px 3px rgb(255, 119, 119);
+    color: rgba(179, 3, 3, 0.979);
+}
+
+#passgenbutt:active {
+    color: rgba(246, 132, 132, 0.979);
+    background-color: aquamarine;
+    box-shadow: inset -5px -5px 5px #226a5f,
+        inset 5px 5px 5px rgba(121, 65, 65, 0.694);
+}
+
+.rightland {
+    display: flex;
+    align-items: center;
+    /* background-color: blue; */
+    width: 55%;
+    height: 100%;
+}
+
+.rlandleft {
+    width: 20%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    /* background-color: aqua; */
+    align-items: center;
+    height: 100%;
+}
+
+option {
+    padding: 0;
+}
+
+input[type="range"] {
+    width: 2px;
+    height: 85%;
+    margin: 0;
+    /* appearance: slider-vertical; */
+    writing-mode: vertical-lr;
+    border: none;
+    box-shadow: 0px 0px 3px red;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    cursor: -webkit-grab;
+    /* Cursor on hover */
+}
+
+input[type="range"]::-moz-range-thumb {
+    cursor: -moz-grab;
+    /* Cursor on hover */
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    cursor: -webkit-grabbing;
+}
+
+input[type="range"]::-moz-range-thumb:active {
+    cursor: -moz-grabbing;
+}
+
+.rlandright {
+    /* background-color: blueviolet; */
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.rlr {
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.gfont3 {
+    font-family: "Young Serif", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.4em;
+    color: aquamarine;
+}
+
+#rangevalue {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    /* text-align: center; */
+    height: 40px;
+    padding: 10px;
+    font-weight: 900;
+    color: #2fff00;
+    box-shadow: 2px 2px 5px red, 2px 2px 2px blue,
+        inset 2px 2px 5px rgb(255, 0, 0);
+    border-radius: 16px;
+    font-size: 1.4em;
+    /* background-color: #00ffdd; */
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    border-radius: 0%;
+    width: 36px;
+    height: 18px;
+    border: 2px solid black;
+    background: rgb(255, 0, 0);
+    border-right: 18px solid black;
+    cursor: grab;
+    transition: 0.25s all linear;
+}
+
+input[type="checkbox"]:active {
+    cursor: grabbing;
+}
+
+input[type="checkbox"]:checked {
+    border: 2px solid black;
+    background: rgb(0, 255, 0);
+    border-left: 16px solid black;
+}

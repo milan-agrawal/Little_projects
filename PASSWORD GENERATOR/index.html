@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Caprasimo&family=Pixelify+Sans:wght@400..700&family=Young+Serif&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Password Generator</title>
+</head>
+
+<body>
+  <main>
+    <div class="landing">
+      <div class="leftland">
+        <h1 class="gfont1" style="color: aquamarine">Generate a</h1>
+        <h1 class="gfont1" style="text-decoration: underline; color: aquamarine">
+          Random Password
+        </h1>
+        <div class="displaypart">
+          <input id="passdisplay" class="gfont2" type="text" value="Password" readonly />
+          <img id="clipboard" title="Copy to Clipboard" src="./img/copy.png" alt="" />
+        </div>
+        <br />
+        <input class="" id="passgenbutt" type="button" value="Generate Password" onclick="passGenerator11()" />
+      </div>
+      <div class="rightland">
+        <div class="rlandleft">
+          <input id="lengthrange" class="slider" title="Password Length" value="8" type="range" min="4" max="18"
+            step="1" list="values11" />
+          <datalist id="values11">
+            <option value="4"></option>
+            <option value="6"></option>
+            <option value="8"></option>
+            <option value="10"></option>
+            <option value="12"></option>
+            <option value="14"></option>
+            <option value="16"></option>
+            <option value="18"></option>
+          </datalist>
+        </div>
+        <div class="rlandright">
+          <div class="rlr">
+            <label class="gfont3"> Password Length : </label>
+            <label id="rangevalue" for="lengthrange"></label>
+          </div>
+          <div class="rlr">
+            <label for="Uppercase1" class="gfont3">Include Uppercase</label>
+            <input id="Uppercase1" type="checkbox" />
+          </div>
+          <div class="rlr">
+            <label class="gfont3" for="Lowercase1">Include Lowercase</label>
+            <input id="Lowercase1" type="checkbox" checked />
+          </div>
+          <div class="rlr">
+            <label class="gfont3" for="Numbers1">Include Numbers</label>
+            <input id="Numbers1" type="checkbox" />
+          </div>
+          <div class="rlr">
+            <label class="gfont3" for="Symbols1">Include Symbols</label>
+            <input id="Symbols1" type="checkbox" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
