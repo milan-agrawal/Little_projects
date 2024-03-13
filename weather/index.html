@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecasting</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="landing">
+        <div class="searchCity11">
+          <input
+            type="text"
+            id="searchCity"
+            placeholder="Enter a city"
+            spellcheck="false"
+          />
+          <button id="searchButton">
+            <img
+              src="img/magnifying-glass.png"
+              style="height: 12px"
+              alt="magnifying-glass"
+            />
+          </button>
+        </div>
+        <div class="error">
+          <div class="erroricon">
+            <img src="img/error1.png" style="height: 100px" alt="" />
+          </div>
+          <p
+            style="
+              font-weight: 900;
+              font-size: 01em;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              color: blue;
+            "
+          >
+            Invalid city name
+          </p>
+        </div>
+        <div class="weatherDisplay">
+          <div class="displayLeft">
+            <div class="weathericon">
+              <img
+                src="img/cloudy.png"
+                class="weather-icon"
+                style="height: 55px"
+                alt=""
+              />
+            </div>
+            <p class="cityname">ahmedabad</p>
+          </div>
+          <div class="displayRight">
+            <div class="disRUp">
+              <p class="displayTemp">30°C</p>
+              <p class="dispalyWeatherName">cloudy</p>
+            </div>
+            <div class="disRDown">
+              <div class="humidity">
+                <div class="humidityDisplay">
+                  <img src="img/humidity.png" style="height: 12px" alt="" />
+                  <p class="humidityValue">30%</p>
+                </div>
+                <p>Humidity</p>
+              </div>
+              <div class="windspeed">
+                <div class="windSpeedDisplay">
+                  <img src="img/windspeed1.png" style="width: 12px" alt="" />
+                  <p class="windspeedValue">100km/h</p>
+                </div>
+                <p>Wind-Speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      const apiKey = "0db317de00c6a3e738d0021a618764c4";
+      const apiUrl =
+        "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+      const searchBox = document.querySelector(".searchCity11 input");
+      const searchbtn = document.querySelector(".searchCity11 button");
+      const weatherIcon = document.querySelector(".weather-icon");
+
+      async function checkWeather(city) {
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+        var data = await response.json();
+
+        console.log(data);
+
+        if (data.cod == 404) {
+          document.querySelector(".weatherDisplay").style.display = "none";
+          document.querySelector(".error").style.display = "flex";
+        } else {
+          document.querySelector(".cityname").innerHTML = data.name;
+          document.querySelector(".displayTemp").innerHTML = Math.round(data.main.temp) + "°C";
+          document.querySelector(".dispalyWeatherName").innerHTML = data.weather[0].main;
+          document.querySelector(".humidityValue").innerHTML = data.main.humidity + "%";
+          document.querySelector(".windspeedValue").innerHTML = data.wind.speed + " Km/h";
+
+          if (data.weather[0].main == "Thunderstorm") {
+            weatherIcon.src = "img/storm.png";
+            document.body.style.backgroundImage = "url('img/storm.gif')";
+          } else if (data.weather[0].main == "Drizzle") {
+            weatherIcon.src = "img/drizzle.png";
+            document.body.style.backgroundImage = "url('img/drizzle.gif')";
+          } else if (data.weather[0].main == "Rain") {
+            weatherIcon.src = "img/rain.png";
+            document.body.style.backgroundImage = "url('img/rain.gif')";
+          } else if (data.weather[0].main == "Snow") {
+            weatherIcon.src = "img/snow.png";
+            document.body.style.backgroundImage = "url('img/snow.gif')";
+          } else if (data.weather[0].main == "Clear") {
+            weatherIcon.src = "img/clear.png";
+            document.body.style.backgroundImage = "url('img/clearsky.webp')";
+          } else if (data.weather[0].main == "Clouds") {
+            weatherIcon.src = "img/cloudy.png";
+            document.body.style.backgroundImage = "url('img/cloudy.gif')";
+          } else if (
+            data.weather[0].main == "Smoke" ||
+            data.weather[0].main == "Haze" ||
+            data.weather[0].main == "Dust" ||
+            data.weather[0].main == "Fog	" ||
+            data.weather[0].main == "Sand" ||
+            data.weather[0].main == "Dust" ||
+            data.weather[0].main == "Ash	" ||
+            data.weather[0].main == "Squall" ||
+            data.weather[0].main == "Tornado"
+          ) {
+            weatherIcon.src = "img/smoke.png";
+            document.body.style.backgroundImage = "url('img/smoke.gif')";
+          } else if (data.weather[0].main == "Mist") {
+            weatherIcon.src = "img/mist.png";
+            document.body.style.backgroundImage = "url('img/mist.gif')";
+          }
+
+          document.querySelector(".weatherDisplay").style.display = "flex";
+          document.querySelector(".error").style.display = "none";
+        }
+      }
+
+      searchbtn.addEventListener("click", () => {
+        var cityValue = searchBox.value;
+        console.log(cityValue);
+        checkWeather(cityValue);
+      });
+    </script>
+  </body>
+</html>
