@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: poppins, sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        min-height: 100vh;
+        background: linear-gradient(135deg, indigo, lavender, blue);
+      }
+
+      .landing {
+        background: rgba(183, 245, 173, 0.947);
+        width: 450px;
+        border: 1px solid rgba(57, 74, 54, 0.947);
+        padding: 20px;
+        border-radius: 16px;
+      }
+
+      .landing .title {
+        display: flex;
+        padding-bottom: 20px;
+      }
+
+      .landing .title p {
+        font-size: 25px;
+        font-weight: 900;
+        color: rgb(64, 2, 92);
+      }
+
+      .landing .title img {
+        height: 30px;
+        margin: 0px 10px;
+      }
+
+      .description {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* background: black; */
+        position: relative;
+      }
+
+      .description input {
+        width: 100%;
+        height: 30px;
+        font-size: 1.15em;
+        font-weight: 530;
+        border-radius: 16px;
+        outline: none;
+        padding: 15px 15px;
+        border: 1px solid green;
+        box-shadow: inset 0px 0px 5px rgb(15, 15, 15);
+      }
+
+      .description button {
+        position: absolute;
+        border-radius: 16px;
+        right: 0px;
+        width: 70px;
+        height: 30px;
+        border: none;
+        background: rgb(208, 252, 52);
+        box-shadow: inset 0px 0px 5px rgb(72, 81, 39);
+        border: 1px solid;
+      }
+
+      .description button:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 5px rgb(72, 81, 39);
+      }
+
+      .description button:active {
+        /* background: rgb(241, 241, 241); */
+        background: rgba(183, 245, 173, 0.947);
+      }
+
+      .taskList ul {
+        /* align-items: center; */
+        justify-content: space-evenly;
+        flex-direction: column;
+        display: flex;
+        margin: 15px 0px;
+        /* position: relative; */
+      }
+
+      .taskList ul li {
+        /* background-color: white; */
+        list-style: none;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        height: 28px;
+        padding: 0px 8px 0px 40px;
+        position: relative;
+        cursor: pointer;
+        font-weight: 550;
+        color: rgb(8, 44, 24);
+      }
+
+      .taskList ul li::before {
+        content: "";
+        background-image: url(unchecked.png);
+        background-position: center;
+        background-size: cover;
+        height: 28px;
+        width: 28px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        /* background-color: white; */
+      }
+
+      ul li.checked {
+        text-decoration: line-through;
+        color: rgb(75, 101, 87);
+        /* color: grey; */
+      }
+
+      .taskList ul li.checked::before {
+        background-image: url(checked.png);
+      }
+
+      .taskList ul li span {
+        /* background-image: url(close.png); */
+        justify-content: center;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        height: 25px;
+        width: 25px;
+        background-position: center;
+        right: 0px;
+        background-size: cover;
+        border-radius: 50%;
+      }
+
+      .taskList ul li span img {
+        height: 8px;
+      }
+
+      .taskList ul li span:hover {
+        cursor: pointer;
+        background-color: rgba(93, 129, 84, 0.352);
+        box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.568);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="landing">
+        <div class="title">
+          <p>To-Do List</p>
+          <img src="notes.png" alt="notes" />
+        </div>
+        <div class="description">
+          <input type="text" id="inputBox1" />
+          <button id="addButt" onclick="addTask()">ADD</button>
+        </div>
+        <div class="taskList">
+          <ul class="listContainer">
+            <!-- <li class="checked">task 1<span><img src="close.png" alt=""></span></li>              
+                    <li>task 2</li>
+                    <li>task 3</li> -->
+          </ul>
+        </div>
+      </div>
+    </main>
+    <script>
+      const inputBox = document.querySelector("input#inputBox1");
+      const addButt = document.querySelector("button#addButt");
+      const taskList = document.querySelector(".listContainer");
+      function addTask() {
+        if (inputBox.value === "") {
+          alert("Please enter a task");
+        } else {
+          let li = document.createElement("li");
+          li.innerText = inputBox.value;
+          taskList.appendChild(li);
+          let span = document.createElement("span");
+          span.innerHTML = "<img src='close.png' alt=''>";
+          li.appendChild(span);
+          inputBox.value = "";
+          saveDate();
+        }
+      }
+
+      taskList.addEventListener("click", function (e) {
+        if (e.target.nodeName === "LI") {
+          e.target.classList.toggle("checked");
+          saveDate();
+        } else if (e.target.nodeName === "SPAN") {
+          e.target.parentElement.remove();
+          saveDate();
+        }
+      });
+
+      function saveDate() {
+        localStorage.setItem("Date1", taskList.innerHTML);
+      }
+
+      function loadData() {
+        taskList.innerHTML = localStorage.getItem("Date1");
+      }
+
+      loadData();
+      window.onload = loadData;
+    </script>
+  </body>
+</html>
