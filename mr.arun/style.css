@@ -1,0 +1,203 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.landingPage{
+    /* display: flex; */
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    /* backdrop-filter: blur(3px); */
+}
+
+.landingPage .header{
+    position: sticky;
+    background-color: rgb(95, 3, 3);
+    top: 0;
+    width: 100%;
+    color: rgb(238, 150, 8);
+    height: 100px;
+    padding: 0px 100px;
+    /* backdrop-filter: blur(10px); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.introduction{
+    min-height: 100vh;
+    background-image: url(./img/typewriterclipart.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+
+}
+
+#intropara{
+    width: 600px;
+    margin: 60px;
+    /* background-color: aqua; */
+    color: rgb(110, 12, 12);
+    padding: 50px;
+    font-size: 3em;
+}
+
+.infoduction{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(95, 3, 3); 
+    display: flex;   
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imgbox{
+    width: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#thepotrait{
+    border-radius: 50%;
+    width: 450px
+}
+
+#infobox{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding-left: 150px;
+    font-size: 2.6em;
+    color: rgb(186, 168, 60);
+    
+}
+
+.courseLanding{
+    background-image: url(./img/newspaperimg.jpg);
+    /* position: sticky; */
+    /* top: 0; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.6em;
+    /* color: rgb(110, 12, 12); */
+    color: rgb(255, 255, 255);
+}
+
+.coursePlate{
+    padding: 70px;
+    background: rgba(28, 28, 28, 0.603);
+    width: 80%;
+}
+
+.coursePlate p{
+    font-weight: 800;
+}
+
+.courselanded{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(95, 3, 3); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px 0px 30px;
+}
+
+.cltop{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 30px;
+    border-radius: 60px;
+    height: 50%;
+    background-color: rgb(238, 150, 8);
+    width: 100%;
+}
+
+.cltleft{
+    background: url(./img/typewriter.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60%;
+    position: relative;
+    margin: 10px;
+    padding: 30px;
+    height: 350px;
+    border-radius: 30px;
+    transition: .4s all linear;
+}
+
+.cltleft:hover{
+ box-shadow: -5px -5px 20px rgb(243, 243, 243), 5px 5px 20px rgb(243, 243, 243)  ;
+}
+
+#enroll{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    margin: 30px;
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(95, 3, 3);
+    transition: .4s all linear;
+}
+
+#enroll:hover{
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255) );
+}
+
+#enroll a{
+    color: rgb(238, 150, 8);
+    font-size: 1.8em;
+    text-decoration: none;
+}
+
+#courseTitle{
+    color: rgb(255, 255, 255);
+    font-size: 4em;
+    filter: drop-shadow(0px 0px 10px rgb(248, 237, 162));
+}
+
+.cltright{
+    margin: 10px;
+    /* text-align: center; */
+    font-size: 1.5em;
+    color: rgb(75, 7, 7);
+}
+
+.clbottom{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin: 20px 20px 0px 20px;
+    padding: 20px;
+    /* height: 50%; */
+    border-radius: 30px;
+    text-align: center;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    background-color: rgb(186, 168, 60);
+    width: 100%;
+}
